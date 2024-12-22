@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f9f5f2;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.wrapper {
+    width: 65vmin;
+    height: 70vmin;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #434548, #606871);
+    border: 2px solid #1A2636;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.game-details {
+    color: #e71d31;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 20px 27px;
+    display: flex;
+    justify-content: space-between;
+    background: #28323c;
+    border-bottom: 1px solid #2A3E53;
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+    background: linear-gradient(145deg, #2b63c3, #360be6e2);
+    border: 1px solid #1A2636;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-board .food {
+    background: radial-gradient(circle, #FF416C, #FF4B2B);
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #FF4B2B, 0 0 20px 5px rgba(255, 75, 43, 0.7);
+    animation: pulse 1s infinite;
+}
+
+.play-board .head {
+    background: greenyellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px #43cd4f, 0 0 20px 5px rgba(39, 205, 117, 0.7);
+}
+
+.controls {
+    display: none;
+    justify-content: space-between;
+}
+
+.controls i {
+    padding: 15px 0;
+    color: #B8C6DC;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.3rem;
+    width: calc(100% / 4);
+    border-right: 1px solid #171b26;
+    transition: all 0.3s ease;
+}
+
+.controls i:hover {
+    color: #00C6FF;
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 90vmin;
+        height: 115vmin;
+    }
+    .game-details {
+        font-size: 1rem;
+        padding: 15px 27px;
+    }
+    .controls {
+        display: flex;
+    }
+    .controls i {
+        padding: 15px 0;
+        font-size: 1rem;
+    }
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(120deg, #1D2B3A, #243B55);
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    color: #ECEFF1;
+    border: 1px solid #2A3E53;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal h1 {
+    margin-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+
+.modal button {
+    background: linear-gradient(145deg, #FF416C, #FF4B2B);
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal button:hover {
+    background: linear-gradient(145deg, #FF4B2B, #FF416C);
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
